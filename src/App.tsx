@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Welcome } from './components/Welcome';
+import { LandingPage } from './components/LandingPage';
 import { LevelTest } from './components/LevelTest';
 import { GoalSelection } from './components/GoalSelection';
 import { StudyPlan } from './components/StudyPlan';
@@ -97,7 +97,12 @@ export default function App() {
       {/* Main Content */}
       <div className={showBottomNav ? 'pb-16 md:pb-0' : ''}>
         {currentScreen === 'welcome' && (
-          <Welcome onNext={() => navigateTo('levelTest')} onUpdateProfile={updateProfile} />
+          <LandingPage 
+            onGetStarted={() => navigateTo('levelTest')} 
+            onUpdateProfile={updateProfile}
+            theme={theme}
+            onToggleTheme={toggleTheme}
+          />
         )}
         {currentScreen === 'levelTest' && (
           <LevelTest onComplete={(level) => {
