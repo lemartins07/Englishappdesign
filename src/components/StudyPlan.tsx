@@ -100,7 +100,7 @@ export function StudyPlan({ userProfile, onStartLesson, onOpenChat, onOpenDashbo
                     <CardTitle className="text-lg">{lesson.title}</CardTitle>
                     <CardDescription className="text-sm">{lesson.topics}</CardDescription>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="px-4 sm:px-6">
                     {isCompleted ? (
                       <Button variant="outline" className="w-full" onClick={() => onStartLesson(lesson.day)}>
                         <CheckCircle2 className="w-4 h-4 mr-2 text-green-500" />
